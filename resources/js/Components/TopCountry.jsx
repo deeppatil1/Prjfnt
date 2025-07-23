@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TopCountry = () => (
-  <div id='tcs' className="max-w-md  bg-white rounded-xl shadow p-4" >
+  <div id='tcs' className="bg-white rounded-xl shadow p-4 w-full">
 
     <div className="flex justify-between items-center mb-2">
       <div className="flex items-center text-sm font-semibold text-gray-800">
@@ -23,8 +23,8 @@ const TopCountry = () => (
     </div>
 
     {/* Exact SVG Chart Replica */}
-    <div className="relative h-64 mt-16 flex items-center justify-center">
-      <svg width="320" height="220" viewBox="0 0 320 220">
+    <div className="relative h-64 mt-16 flex items-center justify-center min-w-0">
+      <svg className="w-full h-full" viewBox="0 0 320 220" preserveAspectRatio="none">
       
         <g fontSize="10" fill="#a3a3a3">
           <text x="10" y="30" >30</text>

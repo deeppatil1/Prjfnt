@@ -3,6 +3,21 @@ import React from 'react';
 function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, themeIcon, setThemeIcon }) {
   const isSidebarExpanded = sidebarOpen || sidebarHover;
 
+ 
+  const handleFullscreen = (e) => {
+    e.preventDefault();
+    const el = document.documentElement;
+    if (el.requestFullscreen) {
+      el.requestFullscreen();
+    } else if (el.mozRequestFullScreen) { 
+      el.mozRequestFullScreen();
+    } else if (el.webkitRequestFullscreen) { 
+      el.webkitRequestFullscreen();
+    } else if (el.msRequestFullscreen) { 
+      el.msRequestFullscreen();
+    }
+  };
+
   return (
     <>
       <style>
@@ -30,18 +45,18 @@ function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, theme
             aria-label={sidebarOpen ? "Close sidebar" : "Open sidebar"}
           >
             <span className="block w-5 h-5 relative">
-              {/* Top bar */}
+            
               <span
                 className="absolute left-0 top-[3px] w-5 h-0.5 rounded bg-gray-800 transition-transform duration-300"
                 style={{
                   transform: sidebarOpen ? 'rotate(45deg) translateY(7px)' : 'none'
                 }}
               />
-              {/* Middle bar */}
+             
               <span
                 className={`absolute left-0 top-[9px] w-5 h-0.5 rounded bg-gray-800 transition-opacity duration-300 ${sidebarOpen ? 'opacity-0' : 'opacity-100'}`}
               />
-              {/* Bottom bar */}
+              
               <span
                 className="absolute left-0 top-[15px] w-5 h-0.5 rounded bg-gray-800 transition-transform duration-300"
                 style={{
@@ -52,6 +67,7 @@ function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, theme
           </button>
         </div>
         <div className="flex items-center gap-6">
+         
           <a href="#" title="Search">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg" stroke="#536485" strokeWidth="2">
@@ -60,7 +76,7 @@ function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, theme
             </svg>
           </a>
           
-         
+          
           <a href="#" title="Language" className="flex items-center gap-1 text-[#5A6983] font-medium">
             <svg
               width="20"
@@ -97,6 +113,7 @@ function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, theme
             <span className="ml-1 text-[#5A6983] font-semibold text-xs">EN</span>
           </a>
          
+         
           <a
             href="#"
             title="Theme"
@@ -130,7 +147,8 @@ function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, theme
             )}
           </a>
 
-          <a href="#" title="Cart">
+          
+          <a href="#" title="Cart" className="hidden sm:inline">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg" stroke="#536485" strokeWidth="2"
               strokeLinecap="round" strokeLinejoin="round">
@@ -140,7 +158,8 @@ function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, theme
             </svg>
           </a>
 
-          <a href="#" title="Notifications" className="relative">
+         
+          <a href="#" title="Notifications" className="relative hidden sm:inline">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg" stroke="#536485" strokeWidth="2"
               strokeLinecap="round" strokeLinejoin="round">
@@ -153,7 +172,8 @@ function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, theme
             </span>
           </a>
 
-          <a href="#" title="Apps">
+        
+          <a href="#" title="Apps" className="hidden sm:inline">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg" stroke="#536485" strokeWidth="2"
               strokeLinecap="round" strokeLinejoin="round">
@@ -164,7 +184,13 @@ function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, theme
             </svg>
           </a>
 
-          <a href="#" title="Fullscreen">
+         
+          <a
+            href="#"
+            title="Fullscreen"
+            className="hidden md:inline"
+            onClick={handleFullscreen}
+          >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
               xmlns="http://www.w3.org/2000/svg" stroke="#536485" strokeWidth="2"
               strokeLinecap="round" strokeLinejoin="round">
@@ -183,11 +209,13 @@ function Navbar({ sidebarWidth, sidebarOpen, sidebarHover, setSidebarOpen, theme
               className="w-8 h-8 rounded-full object-cover border border-gray-300"
             />
 
-            <div className="flex flex-col items-start leading-none">
+           
+            <div className="flex flex-col items-start leading-none hidden sm:flex">
               <span className="font-bold text-sm">Deep Patil</span>
               <span className="text-xs text-gray-500">Admin</span>
             </div>
 
+            
             <a href="#" title="Settings" className="ml-2">
               <span className="rotating-settings">
                 <svg

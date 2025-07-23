@@ -2,11 +2,11 @@ import React from 'react';
 
 function SessionDuration() {
   return (
-    <div className="bg-white rounded-xl shadow w-full max-w-4xl mx-auto p-3 sm:p-4 md:p-5">
+    <div className="bg-white rounded-xl shadow w-full p-2 sm:p-3">
       {/* Header */}
-      <div className="flex justify-between items-center mb-2 sm:mb-3 md:mb-4">
-        <div className="flex items-center font-semibold text-gray-800 text-xs sm:text-sm md:text-base">
-          <span className="w-1 h-4 sm:h-5 bg-cyan-500 rounded-sm mr-1 sm:mr-2"></span>
+      <div className="flex justify-between items-center mb-4 sm:mb-6 mt-0">
+        <div className="flex items-center font-semibold text-gray-800 text-xs sm:text-sm">
+          <span className="w-1 h-4 sm:h-5 bg-cyan-500 rounded-sm mr-2 sm:mr-3"></span>
           Sessions Duration By New Users
         </div>
         <a href="#" className="text-xs sm:text-sm text-gray-500">View All</a>
@@ -16,24 +16,24 @@ function SessionDuration() {
       <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs sm:text-sm md:text-base font-medium text-gray-700 mb-2 sm:mb-3 px-1">
         <div className="flex items-center space-x-1 sm:space-x-2">
           <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-purple-500"></span>
-          <span>New Users</span>
+          <span className="text-xs">New Users</span>
         </div>
         <div className="flex items-center space-x-1 sm:space-x-2">
           <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-cyan-500"></span>
-          <span>Sessions</span>
+          <span className="text-xs">Sessions</span>
         </div>
         <div className="flex items-center space-x-1 sm:space-x-2">
           <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-400"></span>
-          <span>Avg Session Duration</span>
+          <span className="text-xs">Avg Session Duration</span>
         </div>
       </div>
 
       {/* Chart (Static SVG) */}
-      <div className="overflow-x-auto rounded-md">
+      <div className="rounded-md min-w-0 flex items-center">
         <svg 
           viewBox="0 0 600 300" 
-          className="w-full h-48 sm:h-56 md:h-72 lg:h-80 min-w-[350px] sm:min-w-[500px]" 
-          preserveAspectRatio="xMidYMid meet"
+          className="w-full h-48 sm:h-56 md:h-72 lg:h-80"
+          preserveAspectRatio="none"
         >
           {/* Gridlines */}
           <g stroke="#eee" strokeWidth="1">

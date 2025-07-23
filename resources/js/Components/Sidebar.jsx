@@ -7,7 +7,7 @@ function Sidebar({ sidebarWidth, isSidebarExpanded, sidebarOpen, setSidebarHover
 
   return (
     <div
-      className={`fixed top-0 left-0 h-screen shadow-lg z-[1000] flex flex-col pt-16 transition-all duration-300 overflow-y-auto`}
+      className={`fixed top-0 left-0 h-screen shadow-lg z-[1000] flex flex-col  pt-16 transition-all duration-300 overflow-y-auto`}
       style={{
         width: sidebarWidth,
         background: '#111c43'
@@ -48,7 +48,7 @@ function Sidebar({ sidebarWidth, isSidebarExpanded, sidebarOpen, setSidebarHover
         </div>
         {/* Dashboards submenu as dropdown */}
         {isSidebarExpanded && dashboardOpen && (
-          <div className="ml-6 mt-1">
+          <div className="ml-6 mt-1 space-y-2">
             <div className="flex items-center text-white text-[12px] py-1 font-bold cursor-pointer">
               <span className="mr-2 text-xs">●</span>CRM
             </div>
@@ -97,7 +97,7 @@ function Sidebar({ sidebarWidth, isSidebarExpanded, sidebarOpen, setSidebarHover
           <span className="w-2 h-2 rounded-full bg-gray-500 inline-block"></span>
         </div>
       )}
-      <div className={`px-2 ${!isSidebarExpanded ? "mb-6" : ""}`}>
+      <div className={`px-2 ${!isSidebarExpanded ? "mb-6" : ""} space-y-4`}>
         {/* Pages link (no dropdown) */}
         <div className={`flex items-center px-2 py-2 rounded-lg text-white text-[13px] font-medium hover:bg-[#1a2956] cursor-pointer ${isSidebarExpanded ? '' : 'justify-center gap-8'}`}>
           <span className={isSidebarExpanded ? "mr-2" : ""}>
@@ -138,7 +138,7 @@ function Sidebar({ sidebarWidth, isSidebarExpanded, sidebarOpen, setSidebarHover
         </div>
         {/* Task submenu as dropdown */}
         {isSidebarExpanded && taskOpen && (
-          <div className="ml-6 mt-1">
+          <div className="ml-6 mt-1 space-y-2">
             <div className="flex items-center text-white text-[12px] py-1 font-bold cursor-pointer">
               <span className="mr-2 text-xs text-white">●</span>All Tasks
             </div>

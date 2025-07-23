@@ -162,7 +162,7 @@ const channels = [
 
 function ChannelReport() {
 	return (
-		<div className="bg-white rounded-xl w-full lg:w-[75%] max-w-5xl p-2 sm:p-4">
+		<div className="bg-white rounded-xl w-full p-2 sm:p-4 min-h-[500px] flex flex-col">
 			<div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-4 gap-2">
 				<span className="font-semibold text-base sm:text-lg text-gray-800">
 					Visitors By Channel Report

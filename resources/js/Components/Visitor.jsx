@@ -14,7 +14,7 @@ const countries = [
 
 function Visitor() {
   return (
-    <div className="bg-white rounded-xl w-full lg:w-[30%] max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl p-2 sm:p-4 shadow-sm flex flex-col">
+    <div className="bg-white rounded-xl w-full p-2 sm:p-4 shadow-sm flex flex-col min-h-[500px]">
       <div className="flex justify-between items-center mb-3 sm:mb-5">
         <div className="flex items-center gap-1 sm:gap-2 font-semibold text-gray-800 text-sm sm:text-base">
           <span className="w-1 h-4 sm:h-5 bg-purple-400 rounded-sm"></span>

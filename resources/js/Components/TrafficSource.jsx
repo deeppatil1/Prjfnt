@@ -59,7 +59,7 @@ const trafficData = [
 
 function TrafficSource() {
   return (
-    <div className="bg-white rounded-xl shadow p-2 sm:p-3 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto">
+    <div className="bg-white rounded-xl shadow p-2 sm:p-3 w-full">
       <div className="flex justify-between items-center mb-4 sm:mb-6">
         <div className="flex items-center font-semibold text-gray-800 text-xs sm:text-sm">
           <span className="w-1 h-4 sm:h-5 bg-orange-500 rounded-sm mr-2 sm:mr-3"></span>
@@ -70,7 +70,7 @@ function TrafficSource() {
 
       <hr className="border-gray-200" />
 
-      <div className="grid grid-cols-3 text-xs sm:text-sm text-black font-bold px-2 sm:px-4 py-2 sm:py-3">
+      <div className="grid grid-cols-3 text-xs sm:text-[13px] text-black font-bold px-2 sm:px-4 py-2 sm:py-3">
         <div>Browser</div>
         <div className="text-right pr-2 sm:pr-4">Sessions</div>
         <div className="text-right">Traffic</div>
@@ -99,7 +99,7 @@ function TrafficSource() {
                   <path d="M6 10L3 5h6l-3 5z" />
                 </svg>
               )}
-              <span className={`font-medium ${row.sessionsUp ? 'text-green-500' : 'text-red-500'}`}>
+              <span className={`font-medium text-xs sm:text-sm ${row.sessionsUp ? 'text-green-500' : 'text-red-500'}`}>
                 {row.sessions.toLocaleString()}
               </span>
             </div>
@@ -117,4 +117,3 @@ function TrafficSource() {
 }
 
 export default TrafficSource;
-  
